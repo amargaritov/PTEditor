@@ -1,0 +1,1 @@
+gcc -fPIC -shared -o ptdump.so ../ptedit.c

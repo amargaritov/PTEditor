@@ -1,0 +1,4 @@
+sleep 600 & pid=$!; echo $pid
+sudo /disk/local/neuralwalkers/linux/pagedump/pagemap_dump.out $pid | awk -v pid=$pid '{print pid" "$1" "$2 }' | grep -v addr | sudo ./get_all.py
+
+# should print the pt content of sleep

@@ -860,3 +860,12 @@ void ptedit_pte_set_pfn(void* address, pid_t pid, size_t pfn) {
     vm.valid = PTEDIT_VALID_MASK_PTE;
     ptedit_update(address, pid, &vm);
 }
+
+//void my_ptedit_resolve(unsigned int vaddr, unsigned int paddr, int pid) {
+void my_ptedit_resolve(size_t vaddr, size_t paddr, int pid) {
+  ptedit_entry_t vm = ptedit_resolve_kernel((void*)(vaddr), (pid_t)(pid));
+//  printf("%x,%x,%x,%x,%x,%x\n", vaddr, vm.pgd, vm.pud, vm.pmd, vm.pte, paddr);
+//  printf("%d,%d,%d,%d,%d,%d\n", vaddr, vm.pgd, vm.pud, vm.pmd, vm.pte, paddr);
+//  printf("%zu,%zu,%zu,%zu,%zu,%zu\n", vaddr, vm.pgd, vm.pud, vm.pmd, vm.pte, paddr);
+  printf("0x%zx,0x%zx,0x%zx,0x%zx,0x%zx,0x%zx\n", vaddr, vm.pgd, vm.pud, vm.pmd, vm.pte, paddr);
+}
