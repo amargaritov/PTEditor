@@ -1,7 +1,7 @@
 # PTEditor
 Initially, PTEditor is a small library to modify all page-table levels of all processes from user space for x86_64 and ARMv8.
 
-# This branch contains a tool for dumping addresses of PT page on AArch64.
+# This branch contains a tool for dumping addresses of PT pages on AArch64.
 
 ## Installation
 ### Downloading sources
@@ -18,7 +18,7 @@ cd $PTEDITOR_ROOT
 ./build_everything.sh
 ```
 
-## Loading the module
+### Loading the module
 ```bash
 cd $PTEDITOR_ROOT
 ./load_module.sh
